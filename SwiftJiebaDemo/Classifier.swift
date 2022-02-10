@@ -15,14 +15,30 @@ class Classifier {
         let dictPath = Bundle.main.resourcePath!+"/iosjieba.bundle/dict/jieba.dict.small.utf8"
         let hmmPath = Bundle.main.resourcePath!+"/iosjieba.bundle/dict/hmm_model.utf8"
         let userDictPath = Bundle.main.resourcePath!+"/iosjieba.bundle/dict/user.dict.utf8"
+        let idfPath = Bundle.main.resourcePath!+"/iosjieba.bundle/dict/idf.utf8"
+        let stopWordPath = Bundle.main.resourcePath!+"/iosjieba.bundle/dict/stop_words.utf8"
         
-        JiebaWrapper().objcJiebaInit(dictPath, forPath: hmmPath, forDictPath: userDictPath);
+        JiebaWrapper().objcJiebaInit(dictPath, forPath: hmmPath, forIdfPath: idfPath, forStopWordPath: stopWordPath, forDictPath: userDictPath);
     }
     
     func tokenize(_ message:String) -> [String] {
         print("tokenize...")
         let words = NSMutableArray()
         JiebaWrapper().objcJiebaCut(message, toWords: words)
+        return words as! [String]
+    }
+    
+    func tags(_ message:String) -> [String] {
+        print("tag...")
+        let words = NSMutableArray()
+        JiebaWrapper().objcJiebaExtractTags(message, toWords: words)
+        return words as! [String]
+    }
+    
+    func textRank(_ message:String) -> [String] {
+        print("textRank...")
+        let words = NSMutableArray()
+        JiebaWrapper().objcJiebaTextRank(message, toWords: words)
         return words as! [String]
     }
 }

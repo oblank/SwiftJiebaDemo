@@ -119,9 +119,9 @@
 			isa = PBXGroup;
 			children = (
 				17873AB721EDA3D200BA2199 /* Segmentor.cpp */,
+				17873ADE21EDA3D200BA2199 /* Segmentor.h */,
 				17873AB821EDA3D200BA2199 /* iosjieba.bundle */,
 				17873AB921EDA3D200BA2199 /* cppjieba */,
-				17873ADE21EDA3D200BA2199 /* Segmentor.h */,
 			);
 			path = iosjieba;
 			sourceTree = "<group>";
@@ -399,13 +399,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S74V2RZ46A;
+				DEVELOPMENT_TEAM = 692S4255HR;
 				INFOPLIST_FILE = SwiftJiebaDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.qiwihui.SwiftJiebaDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oblank.SwiftJiebaDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftJiebaDemo/SwiftJiebaDemo-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
@@ -418,13 +418,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S74V2RZ46A;
+				DEVELOPMENT_TEAM = 692S4255HR;
 				INFOPLIST_FILE = SwiftJiebaDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.qiwihui.SwiftJiebaDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oblank.SwiftJiebaDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftJiebaDemo/SwiftJiebaDemo-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;

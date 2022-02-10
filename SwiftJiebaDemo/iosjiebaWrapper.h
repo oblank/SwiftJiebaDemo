@@ -10,7 +10,9 @@
 
 @interface JiebaWrapper : NSObject
 
-- (void) objcJiebaInit: (NSString *) dictPath forPath: (NSString *) hmmPath forDictPath: (NSString *) userDictPath;
+- (void) objcJiebaInit: (NSString *) dictPath forPath: (NSString *) hmmPath forIdfPath: (NSString *) idfPath forStopWordPath: (NSString *) stopWordPath forDictPath: (NSString *) userDictPath;
 - (void) objcJiebaCut: (NSString *) sentence toWords: (NSMutableArray *) words;
+- (void) objcJiebaExtractTags: (NSString *) sentence toWords: (NSMutableArray *) words;
+- (void) objcJiebaTextRank: (NSString *) sentence toWords: (NSMutableArray *) words;
 
 @end
