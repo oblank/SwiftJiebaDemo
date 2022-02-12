@@ -50,7 +50,7 @@
 //        wordsList.push_back(wordsList[i]);
 //    }
     JiebaExtractTags(cSentence, 5, wordsList);
-    print(wordsList);
+//    print(wordsList);
     
 //    [words removeAllObjects];
 //    std::for_each(wordsList.begin(), wordsList.end(), [&words](std::string str) {
@@ -69,7 +69,7 @@
 //        wordsList.push_back(wordsList[i]);
 //    }
     JiebaTextRank(cSentence, 5, wordsList);
-    print(wordsList);
+//    print(wordsList);
     
 //    [words removeAllObjects];
 //    std::for_each(wordsList.begin(), wordsList.end(), [&words](std::string str) {
