@@ -40,42 +40,33 @@
     });
 }
 
-- (void) objcJiebaExtractTags: (NSString *) sentence toWords: (NSMutableArray *) words {
+- (void) objcJiebaExtractTags: (NSString *) sentence topN: (NSInteger) topNum toWords: (NSMutableArray *) words {
     const char* cSentence = [sentence UTF8String];
-    
     std::vector<std::pair<std::string, double>> wordsList;
-    
-//    for (int i = 0; i < [words count];i++)
-//    {
-//        wordsList.push_back(wordsList[i]);
-//    }
-    JiebaExtractTags(cSentence, 5, wordsList);
-//    print(wordsList);
-    
-//    [words removeAllObjects];
-//    std::for_each(wordsList.begin(), wordsList.end(), [&words](std::string str) {
-//        id nsstr = [NSString stringWithUTF8String:str.c_str()];
-//        [words addObject:nsstr];
-//    });
+    JiebaExtractTags(cSentence, topNum, wordsList);
+//    std::cout << wordsList;
+
+    [words removeAllObjects];
+    std::for_each(wordsList.begin(), wordsList.end(), [&words](std::pair<std::string, double> str) {
+        id nsstr = [NSString stringWithUTF8String:str.first.c_str()];
+        [words addObject:nsstr];
+        std::cout << str.first << "：" << str.second << "\n";
+    });
 }
 
-- (void) objcJiebaTextRank: (NSString *) sentence toWords: (NSMutableArray *) words {
+- (void) objcJiebaTextRank: (NSString *) sentence topN: (NSInteger) topNum toWords: (NSMutableArray *) words {
     const char* cSentence = [sentence UTF8String];
     
     std::vector<std::pair<std::string, double>> wordsList;
+    JiebaTextRank(cSentence, topNum, wordsList);
+//    std::cout << wordsList;
     
-//    for (int i = 0; i < [words count];i++)
-//    {
-//        wordsList.push_back(wordsList[i]);
-//    }
-    JiebaTextRank(cSentence, 5, wordsList);
-//    print(wordsList);
-    
-//    [words removeAllObjects];
-//    std::for_each(wordsList.begin(), wordsList.end(), [&words](std::string str) {
-//        id nsstr = [NSString stringWithUTF8String:str.c_str()];
-//        [words addObject:nsstr];
-//    });
+    [words removeAllObjects];
+    std::for_each(wordsList.begin(), wordsList.end(), [&words](std::pair<std::string, double> str) {
+        id nsstr = [NSString stringWithUTF8String:str.first.c_str()];
+        [words addObject:nsstr];
+        std::cout << str.first << "：" << str.second << "\n";
+    });
 }
 
 @end

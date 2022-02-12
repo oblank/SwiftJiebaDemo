@@ -31,14 +31,14 @@ class Classifier {
     func tags(_ message:String) -> [String] {
         print("tag...")
         let words = NSMutableArray()
-        JiebaWrapper().objcJiebaExtractTags(message, toWords: words)
+        JiebaWrapper().objcJiebaExtractTags(message, topN: 3, toWords: words)
         return words as! [String]
     }
     
     func textRank(_ message:String) -> [String] {
         print("textRank...")
         let words = NSMutableArray()
-        JiebaWrapper().objcJiebaTextRank(message, toWords: words)
+        JiebaWrapper().objcJiebaTextRank(message, topN: 3, toWords: words)
         return words as! [String]
     }
 }
